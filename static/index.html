@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+
+        body {
+            font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            margin: 0;
+        }
+
+        .links line {
+          stroke: #999;
+          stroke-opacity: 0.6;
+        }
+
+        #file-controls {
+            position: absolute;
+            bottom: 14px;
+            right: 12px;
+            // width: 100%;
+            background: white;
+            padding: 10px;
+            border: solid;
+        }
+
+        #view-container {
+            margin: auto;
+            position: absolute;
+            // bottom: 50px;
+            bottom: 14px;
+            left: 12px;
+            background: white;
+            border: solid;
+            padding: 5px;
+        }
+
+        #graph {
+            padding: 10px;
+        }
+
+        #graph > svg {
+            border: solid;
+        }
+
+        #view-controls {
+            // border: solid;
+            padding: 10px;
+        }
+
+        #history-container {
+            border: black solid;
+            padding: 5px;
+            position: absolute;
+            left: 12px;
+            background: white;
+            top: 10px;
+        }
+
+        #history {
+            // border: black solid thin;
+            padding: 10px;
+        }
+
+        #legend-container {
+            border: black solid;
+            padding: 5px;
+            position: absolute;
+            right: 12px;
+            background: white;
+            top: 10px;
+        }
+        #legend {
+            padding: 10px;
+            // border: black solid;
+        }
+
+        </style>
+        <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+        <!-- <link rel="stylesheet" href="style.css"> -->
+    </head>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+    <script src="https://unpkg.com/viz.js@1.8.0/viz.js" type="javascript/worker"></script>
+    <script src="js/d3-save-svg.min.js"></script>
+    <script src="js/d3-graphviz-zoom-patch.js"></script>
+    <body>
+        <div id="file-controls">
+            <form method=post enctype=multipart/form-data action="load_coreir_file" style="display: inline;">
+                 <input type=file name=file>
+                 <input type=submit value=Upload>
+            </form>
+            <button id="export"> Export </button>
+        </div>
+        <div id="view-container">
+            <h3 style="margin-bottom: 0; margin-top: 0"> View Options </h3>
+            <div id="view-controls">
+                Mode:
+                <select id="view-controls-mode">
+                    <option value="Directed"> Directed </option>
+                    <option value="Combinational"> Combinational </option>
+                    <option value="Undirected"> Undirected </option>
+                </select>
+                Engine:
+                <select id="engine">
+                    <option value="dot"> dot </option>
+                    <option value="circo"> circo </option>
+                    <option value="fdp"> fdp </option>
+                    <option value="neato"> neato </option>
+                    <option value="osage"> osage </option>
+                    <option value="patchwork"> patchwork </option>
+                    <option value="twopi"> twopi </option>
+                </select>
+                <label for="view-mode-with-ports"> Show Ports </label>
+                <input name="with-ports" type="checkbox" id="view-mode-with-ports" checked>
+            </div>
+        </div>
+        <div id="history-container">
+            <h3 style="margin-bottom: 0; margin-top: 0"> Hierarchy </h3>
+            <div id="history"></div>
+        </div>
+        <div id="legend-container">
+            <h3 style="margin-bottom: 0; margin-top: 0"> Modules </h3>
+            <div id="legend"></div>
+        </div>
+        <div id="graph" style="text-align: center;"></div>
+    </body>
+    <script src="js/main.js"></script>
+</html>
