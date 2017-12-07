@@ -3,7 +3,7 @@ import json
 import os
 import subprocess
 
-from flask import Flask, request, send_from_directory, request, flash, redirect, url_for
+from flask import Flask, request, send_from_directory, request, redirect, url_for
 
 app = Flask("coreir-viz-server", static_url_path='')
 
