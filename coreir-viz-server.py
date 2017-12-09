@@ -3,7 +3,7 @@ import json
 import os
 import subprocess
 
-from flask import Flask, request, send_from_directory, request, flash, redirect, url_for
+from flask import Flask, request, send_from_directory, request, redirect, url_for
 
 app = Flask("coreir-viz-server", static_url_path='')
 
@@ -151,12 +151,12 @@ def build_dot(coreir_json_file):
 @app.route('/load_coreir_file', methods=['POST'])
 def load_coreir_file():
     if 'file' not in request.files:
-        flash('No file part')
-        return redirect(request.url)
+        print('No file part')
+        return redirect(url_for('root'))
     file = request.files['file']
     if file.filename == '':
-        flash('No selected file')
-        return redirect(request.url)
+        print('No selected file')
+        return redirect(url_for('root'))
     filename = file.filename
     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
     build_dot(filename)
