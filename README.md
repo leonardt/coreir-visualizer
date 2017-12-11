@@ -25,3 +25,5 @@ contains a set of examples in the `examples/` directory.
 Top left menu shows level in the module hierarchy. Top right menu allows you to
 highlight instances of a specific module type. Bottom left menu lets you select
 different views and layout engines.
+
+**NOTE: KNOWN ISSUE** To resize the window, you must refresh the page to redraw the SVG element (it is not responsive.)
