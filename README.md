@@ -1,4 +1,9 @@
 Install coreir: https://github.com/rdaly525/coreir
+```
+git clone https://github.com/rdaly525/coreir.git
+cd coreir
+sudo make install  # -j 8 for parallel build with 8 threads
+```
 
 Get the Python dependencies
 ```
