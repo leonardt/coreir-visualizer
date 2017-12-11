@@ -85,21 +85,21 @@ function render() {
                     instance_edge_map[instance].push(d3.select(this))
                 }
                 d3.select(this).on('mouseover', function(path) {
-                    d3.select(this).attr('stroke-width', 3)
+                    d3.select(this).attr('stroke-width', 3).attr('stroke', 'red')
                 })
                 d3.select(this).on('mouseout', function(path) {
-                    d3.select(this).attr('stroke-width', 1)
+                    d3.select(this).attr('stroke-width', 1).attr('stroke', 'black')
                 })
             } else if (d.tag == 'text' && d.parent.attributes.class == 'node') {
                 var key = d.parent.key + ":" + d.children[0].text
                 d3.select(this).on('mouseover', function(port) {
                     if (key in edge_map) {
                         for (var i = 0; i < edge_map[key].length; i++ ) {
-                            edge_map[key][i].attr('stroke-width', 3)
+                            edge_map[key][i].attr('stroke-width', 3).attr('stroke', 'red')
                         }
                     } else if (d.parent.key in instance_edge_map) {
                         for (var i = 0; i < instance_edge_map[d.parent.key].length; i++ ) {
-                            instance_edge_map[d.parent.key][i].attr('stroke-width', 3)
+                            instance_edge_map[d.parent.key][i].attr('stroke-width', 3).attr('stroke', 'red')
                         }
                     }
                     if (mode == "Combinational") {
@@ -118,11 +118,11 @@ function render() {
                 d3.select(this).on('mouseout', function(port) {
                     if (key in edge_map) {
                         for (var i = 0; i < edge_map[key].length; i++ ) {
-                            edge_map[key][i].attr('stroke-width', 1)
+                            edge_map[key][i].attr('stroke-width', 1).attr('stroke', 'black')
                         }
                     } else if (d.parent.key in instance_edge_map) {
                         for (var i = 0; i < instance_edge_map[d.parent.key].length; i++ ) {
-                            instance_edge_map[d.parent.key][i].attr('stroke-width', 1)
+                            instance_edge_map[d.parent.key][i].attr('stroke-width', 1).attr('stroke', 'black')
                         }
                     }
                     if (mode == "Combinational") {
