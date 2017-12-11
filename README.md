@@ -8,7 +8,8 @@ sudo make install  # -j 8 for parallel build with 8 threads
 Get the Python dependencies
 ```
 pip install -r requirements.txt
-pip install git+git://github.com/leonardt/pycoreir.git@448b-freeze  # Need the dev branch of pycoreir
+# Need the dev branch of pycoreir
+pip install git+git://github.com/leonardt/pycoreir.git@448b-freeze
 ```
 
 Run the server
