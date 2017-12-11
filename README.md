@@ -8,7 +8,7 @@ sudo make install  # -j 8 for parallel build with 8 threads
 Get the Python dependencies
 ```
 pip install -r requirements.txt
-# Need the dev branch of pycoreir
+# Need the 448b-freeze branch of pycoreir
 pip install git+git://github.com/leonardt/pycoreir.git@448b-freeze
 ```
 
@@ -25,3 +25,5 @@ contains a set of examples in the `examples/` directory.
 Top left menu shows level in the module hierarchy. Top right menu allows you to
 highlight instances of a specific module type. Bottom left menu lets you select
 different views and layout engines.
+
+**TODO:** Update the 448b-freeze branch related instructions after the class is over.
