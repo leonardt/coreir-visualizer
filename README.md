@@ -1,6 +1,6 @@
-Install coreir: https://github.com/rdaly525/coreir
+Install coreir's dev branch: https://github.com/rdaly525/coreir
 ```
-git clone https://github.com/rdaly525/coreir.git
+git clone -b dev https://github.com/rdaly525/coreir.git
 cd coreir
 sudo make install  # -j 8 for parallel build with 8 threads
 ```
@@ -8,6 +8,7 @@ sudo make install  # -j 8 for parallel build with 8 threads
 Get the Python dependencies
 ```
 pip install -r requirements.txt
+pip install git+git://github.com/leonardt/pycoreir.git@dev  # Need the dev branch of pycoreir
 ```
 
 Run the server
