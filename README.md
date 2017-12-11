@@ -1,4 +1,6 @@
-Get the dependencies
+Install coreir: https://github.com/rdaly525/coreir
+
+Get the Python dependencies
 ```
 pip install -r requirements.txt
 ```
