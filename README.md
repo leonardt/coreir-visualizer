@@ -5,7 +5,12 @@ Get the Python dependencies
 pip install -r requirements.txt
 ```
 
-Running the server
+Run the server
 ```
 FLASK_APP=coreir-viz-server.py flask run
 ```
+
+Open the web endpoint logged by Flask (for me it is localhost:5000).
+
+Select a file using the "Choose file" menu on the bottom right, this repository
+contains a set of examples in the `examples/` directory.
