@@ -19,3 +19,7 @@ Open the web endpoint logged by Flask (for me it is localhost:5000).
 
 Select a file using the "Choose file" menu on the bottom right, this repository
 contains a set of examples in the `examples/` directory.
+
+Top left menu shows level in the module hierarchy. Top right menu allows you to
+highlight instances of a specific module type. Bottom left menu lets you select
+different views and layout engines.
